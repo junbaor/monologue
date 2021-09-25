@@ -30,5 +30,6 @@ jobs:
           host: ${{ secrets.BARK_HOST}}
           key: ${{ secrets.BARK_KEY }}
           title: Github Action 通知
-          body: ${{ github.repository }} 构建结果:\ ${{ job.status }}
-          url: https://github.com/${{ github.repository }}/runs/${{ github.job }}
+          body: ${{ github.repository }} 构建结果 ${{ job.status }}
+          isArchive: 1
+          url: https://github.com/${{ github.repository }}/runs/${{ github.run_id }}
